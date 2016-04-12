@@ -24,7 +24,7 @@ class PokedexEntry:
 
     def __str__(self):
         s = ""
-        s += "Name: " + self.name + "    Weight: " + str(self.weight) + "\n"
+        s += "Name: " + self.name.title() + "    Weight: " + str(self.weight) + "\n"
 
         s += "Type modifiers against this Pokemon:\n"
         for poketype, modifier in sorted(self.typeprofile.type_modifiers.items(), key=lambda x: x[1]):
@@ -34,7 +34,7 @@ class PokedexEntry:
 
     def get_json(self):
         d = {
-            "name": self.name,
+            "name": self.name.title(),
             "weight": self.weight,
             "primarytype": self.primarytype,
             "secondarytype": self.secondarytype,
