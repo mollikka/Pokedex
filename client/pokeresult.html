@@ -1,9 +1,25 @@
 <div class="pokeresult">
-  <h2>{{name}}</h2>
-  <p>Weight: {{weight}}</p>
-  <p>HP: {{hp}}</p>
-  <p>Attack: {{attack}}</p>
-  <p>Defense: {{defense}}</p>
-  <p>Sp. Att: {{spattack}}</p>
-  <p>Sp. Def: {{spdefense}}</p>
+  <div class="row">
+    <h2 class="col-xs-12">{{name}}</h2>
+  </div>
+  <div class="row">
+    <div class="col-xs-3">Types: {{primarytype}} {{secondarytype}}</div>
+    <div class="col-xs-3">Weight: {{weight}}</div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <h3>Stats</h3>
+      <div class="col-xs-12">HP: {{hp}}</div>
+      <div class="col-xs-6">Attack: {{attack}}</div>
+      <div class="col-xs-6">Defense: {{defense}}</div>
+      <div class="col-xs-6">Sp. Att: {{spattack}}</div>
+      <div class="col-xs-6">Sp. Def: {{spdefense}}</div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-8">
+      <h3>Defending modifiers against</h3>
+      {{#list typemods}}{{type}} {{value}}{{/list}}
+    </div>
+  </div>
 </div>
