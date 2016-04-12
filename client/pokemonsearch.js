@@ -1,9 +1,15 @@
 $(document).ready(function(){
   var template;
+  var searcherror;
 
   $.ajax({
     url: "pokeresult.html",
     success: function(html) {template = Handlebars.compile(html);},
+  });
+  
+  $.ajax({
+    url: "searcherror.html",
+    success: function(html) {searcherror = html;},
   });
 
   Handlebars.registerHelper('list', function(items, options) {
@@ -22,7 +28,7 @@ $(document).ready(function(){
       type: 'GET',
       url: "pokemon/"+$('#pokesearch').val(),
       success: function(response) {add_result(response);},
-      error: function() {alert("Pokemon not found");},
+      error: function() {$('#pokeresults').prepend(searcherror);},
     });
   });
 
