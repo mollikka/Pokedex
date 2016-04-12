@@ -38,7 +38,7 @@ class PokedexEntry:
             "weight": self.weight,
             "primarytype": self.primarytype,
             "secondarytype": self.secondarytype,
-            "typemods": [{"type":k,"value":v} for k,v in sorted(self.typeprofile.type_modifiers.items(),key=lambda x:x[1])],
+            "typemods": [{"type":k,"value":v} for k,v in sorted(self.typeprofile.type_modifiers.items(),key=lambda x:x[1]) if v!=1],
             "hp": self.hp,
             "defense": self.defense,
             "attack": self.attack,
